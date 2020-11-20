@@ -8,11 +8,19 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>SSDT for Skull Canyon (modified by apotter)</string>
+				<string>SSDT for Skull Canyon EC/USBX</string>
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
-				<string>SSDT-NUC6-SC.aml</string>
+				<string>SSDT-EC-USBX.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>SSDT for Skull Canyon SMBus</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-SBUS-MCHC.aml</string>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -32,64 +40,7 @@
 			</dict>
 		</array>
 		<key>Patch</key>
-		<array>
-			<dict>
-				<key>Comment</key>
-				<string>change H_EC to EC</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Find</key>
-				<data>
-				SF9FQw==
-				</data>
-				<key>Replace</key>
-				<data>
-				RUNfXw==
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>change _DSM to XDSM</string>
-				<key>Enabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				X0RTTQ==
-				</data>
-				<key>Replace</key>
-				<data>
-				WERTTQ==
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>change XDCI._STA to XDCI.XSTA</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Find</key>
-				<data>
-				WERDSS5fU1RB
-				</data>
-				<key>Replace</key>
-				<data>
-				WERDSS5YU1RB
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>change NTFY to XTFY</string>
-				<key>Enabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				TlRGWQ==
-				</data>
-				<key>Replace</key>
-				<data>
-				WFRGWQ==
-				</data>
-			</dict>
-		</array>
+		<array/>
 		<key>Quirks</key>
 		<dict>
 			<key>FadtEnableReset</key>
@@ -470,13 +421,13 @@
 			</dict>
 			<dict>
 				<key>BundlePath</key>
-				<string>itlwm.kext</string>
+				<string>AirportItlwm.kext</string>
 				<key>Comment</key>
 				<string></string>
 				<key>Enabled</key>
 				<false/>
 				<key>ExecutablePath</key>
-				<string>Contents/MacOS/itlwm</string>
+				<string>Contents/MacOS/AirportItlwm</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
@@ -572,6 +523,12 @@
 			<integer>0</integer>
 			<key>Vault</key>
 			<string>Optional</string>
+			<key>ApECID</key>
+			<integer>0</integer>
+			<key>DmgLoading</key>
+			<string>Signed</string>
+			<key>SecureBootModel</key>
+			<string>Disabled</string>
 		</dict>
 		<key>Tools</key>
 		<array>
@@ -615,7 +572,7 @@
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<dict>
 				<key>boot-args</key>
-				<string></string>
+				<string>forceRenderStandby=0</string>
 			</dict>
 		</dict>
 		<key>WriteFlash</key>
